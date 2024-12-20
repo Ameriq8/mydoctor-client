@@ -98,7 +98,7 @@ export default function TreatmentsPage() {
       if (sortBy === "name") return a.name.localeCompare(b.name);
       if (sortBy === "cost") {
         const costOrder = { Low: 1, Medium: 2, High: 3 };
-        return costOrder[b.cost] - costOrder[a.cost];
+        return costOrder[b.cost as keyof typeof costOrder] - costOrder[a.cost as keyof typeof costOrder];
       }
       return 0;
     });
