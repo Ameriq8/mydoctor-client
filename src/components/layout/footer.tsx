@@ -10,9 +10,11 @@ import {
   Linkedin,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { mergeClasses } from "@/lib/utils";
 
 export function Footer() {
-  const { t } = useTranslation('footer');
+  const { i18n, t } = useTranslation('footer');
+  const locale = i18n.language;
 
   return (
     <footer className="w-full bg-gray-900 text-white">
@@ -148,15 +150,15 @@ export function Footer() {
             <h3 className="mb-4 text-lg font-semibold">{t('Contact_Information')}</h3>
             <ul className="space-y-2">
               <li className="flex items-center">
-                <MapPin className="mx-2 h-5 w-5 text-purple-500" />
+                <MapPin className={mergeClasses(locale === "ar" ? "ml-2" : "mr-2", "h-5 w-5 text-purple-500")} />
                 <span className="text-gray-400">{t('Baghdad_Iraq')}</span>
               </li>
               <li className="flex items-center">
-                <Phone className="mx-2 h-5 w-5 text-purple-500" />
+                <Phone className={mergeClasses(locale === "ar" ? "ml-2" : "mr-2", "h-5 w-5 text-purple-500")} />
                 <span className="text-gray-400">{t('Phone_Number')}</span>
               </li>
               <li className="flex items-center">
-                <Mail className="mx-2 h-5 w-5 text-purple-500" />
+                <Mail className={mergeClasses(locale === "ar" ? "ml-2" : "mr-2", "h-5 w-5 text-purple-500")} />
                 <span className="text-gray-400">{t('Email')}</span>
               </li>
             </ul>
