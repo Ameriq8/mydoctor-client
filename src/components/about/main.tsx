@@ -42,7 +42,9 @@ export default function AboutComponent() {
       }
     }, [end, duration, isInView]);
 
-    return <span ref={countRef}>{t(pluralKey, { count, formattedCount: formatCount(count) })}</span>;
+    return (
+      <span ref={countRef}>{t(pluralKey, { count, formattedCount: formatCount(count) })}</span>
+    );
   };
 
   const impacts = [
@@ -92,36 +94,6 @@ export default function AboutComponent() {
               </CardContent>
             </Card>
           ))}
-          {/* <Card>
-            <CardHeader>
-              <CardTitle className="text-4xl font-bold text-purple-600">
-                <AnimatedCounter end={1000} pluralKey="Our_Impacts.Healthcare_Providers" />
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CardDescription>{t('Our_Impacts.Healthcare_Providers_Description')}</CardDescription>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-4xl font-bold text-purple-600">
-                <AnimatedCounter end={18} pluralKey="Our_Impacts.Governorates_Covered" />
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CardDescription>{t('Our_Impacts.Governorates_Covered_Description')}</CardDescription>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-4xl font-bold text-purple-600">
-                <AnimatedCounter end={50} pluralKey="Our_Impacts.Monthly_Appointments" />
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CardDescription>{t('Our_Impacts.Monthly_Appointments_Description')}</CardDescription>
-            </CardContent>
-          </Card> */}
         </div>
       </motion.section>
 
