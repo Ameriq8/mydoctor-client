@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 const cairo = Cairo({
-	subsets: ["latin", "arabic"],
+  subsets: ['latin', 'arabic'],
   weight: ['400', '700'],
 });
 

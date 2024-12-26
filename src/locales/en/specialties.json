@@ -1,0 +1,9 @@
+{
+  "title": "Medical Specialties",
+  "searchPlaceholder": "Search specialties...",
+  "sortBy": {
+    "name": "Name",
+    "doctors": "Doctors",
+    "patients": "Patients"
+  }
+}

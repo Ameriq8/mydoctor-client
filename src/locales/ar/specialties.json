@@ -1,0 +1,9 @@
+{
+  "title": "التخصصات الطبية",
+  "searchPlaceholder": "ابحث عن التخصصات...",
+  "sortBy": {
+    "name": "الاسم",
+    "doctors": "الأطباء",
+    "patients": "المرضى"
+  }
+}

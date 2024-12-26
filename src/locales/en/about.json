@@ -2,6 +2,17 @@
   "About_Title": "About MyDoctor.IQ",
   "About_Description_1": "MyDoctor.IQ is Iraq's leading healthcare platform, connecting patients with quality healthcare services across the country. Our mission is to make healthcare accessible, transparent, and efficient for all Iraqis.",
   "About_Description_2": "Founded in 2023, we've quickly grown to become the most trusted source for finding and booking healthcare services in Iraq. We're committed to improving the healthcare experience for both patients and providers.",
+  "Our_Impact_Title": "Our Impact",
+  "Our_Impacts": {
+    "Registered_Users": "{count, plural, =0 {No users} =1 {{formattedCount} user} other {{formattedCount}}} +",
+    "Registered_Users_Description": "Registered Users",
+    "Healthcare_Providers": "{count, plural, =0 {No providers} =1 {{formattedCount} provider} other {{formattedCount}}} +",
+    "Healthcare_Providers_Description": "Healthcare Providers",
+    "Governorates_Covered": "{count, plural, =0 {No governorates} =1 {{formattedCount}} other {{formattedCount}}} +",
+    "Governorates_Covered_Description": "Governorates Covered",
+    "Monthly_Appointments": "{count, plural, =0 {No appointments} =1 {{formattedCount}} other {{formattedCount}}}+",
+    "Monthly_Appointments_Description": "Monthly Appointments"
+  },
   "Values_Title": "Our Values",
   "Values": [
     {

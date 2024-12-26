@@ -10,7 +10,7 @@ import {
   Linkedin,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { mergeClasses } from "@/lib/utils";
+import { mergeClasses } from "@/utils/helper";
 
 export function Footer() {
   const { i18n, t } = useTranslation('footer');

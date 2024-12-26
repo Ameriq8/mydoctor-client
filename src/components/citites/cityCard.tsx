@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "../ui/button";
-import { mergeClasses } from "@/lib/utils";
+import { mergeClasses } from "@/utils/helper";
 
 interface City {
   id: number;

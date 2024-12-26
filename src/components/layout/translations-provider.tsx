@@ -4,6 +4,7 @@ import { I18nextProvider } from 'react-i18next';
 import { ReactNode } from 'react';
 import initTranslations from '@/app/i18n';
 import { Resource, createInstance } from 'i18next';
+import ICU from 'i18next-icu';
 
 export default function TranslationsProvider({
   children,
@@ -16,7 +17,7 @@ export default function TranslationsProvider({
   namespaces: string[];
   resources: Resource;
 }) {
-  const i18n = createInstance();
+  const i18n = createInstance().use(ICU);
 
   initTranslations(locale, namespaces, i18n, resources);
 

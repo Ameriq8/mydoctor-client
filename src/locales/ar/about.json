@@ -2,6 +2,17 @@
   "About_Title": "عن MyDoctor.IQ",
   "About_Description_1": "MyDoctor.IQ هو المنصة الرائدة للرعاية الصحية في العراق، حيث يربط المرضى بخدمات رعاية صحية عالية الجودة في جميع أنحاء البلاد. مهمتنا هي جعل الرعاية الصحية متاحة وشفافة وفعالة للجميع.",
   "About_Description_2": "تأسست في عام 2023، ونمت بسرعة لتصبح المصدر الأكثر ثقة للعثور على خدمات الرعاية الصحية وحجزها في العراق. نحن ملتزمون بتحسين تجربة الرعاية الصحية لكل من المرضى ومقدمي الخدمات.",
+  "Our_Impact": "تأثيرنا",
+  "Our_Impacts": {
+    "Registered_Users": "{count, plural, =0 {لا يوجد مستخدمون} =1 {{formattedCount} مستخدم} other {{formattedCount}}} +",
+    "Registered_Users_Description": "المستخدمون المسجلون",
+    "Healthcare_Providers": "{count, plural, =0 {لا يوجد مزودون} =1 {{formattedCount} مزود} other {{formattedCount}}} +",
+    "Healthcare_Providers_Description": "مزودو الرعاية الصحية",
+    "Governorates_Covered": "{count, plural, =0 {لا توجد محافظات} =1 {{formattedCount} محافظة} other {{formattedCount}}} +",
+    "Governorates_Covered_Description": "المحافظات المشمولة",
+    "Monthly_Appointments": "{count, plural, =0 {لا توجد مواعيد} =1 {{formattedCount} موعد} other {{formattedCount}}}+",
+    "Monthly_Appointments_Description": "المواعيد الشهرية"
+  },
   "Values_Title": "قيمنا",
   "Values": [
     {
