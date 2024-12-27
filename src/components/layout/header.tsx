@@ -21,11 +21,13 @@ const navItems = [
   { href: '/facilities', label: 'Facilities' },
   { href: '/doctors', label: 'Doctors' },
   { href: '/specialties', label: 'Specialties' },
+  { href: '/services', label: 'Services' },
+  { href: '/pricing', label: 'Pricing' },
   { href: '/about', label: 'About' },
 ];
 
 export function Header() {
-  const { i18n, t } = useTranslation("header");
+  const { i18n, t } = useTranslation('header');
   const currentLocale = i18n.language;
   const router = useRouter();
   const currentPathname = usePathname();
