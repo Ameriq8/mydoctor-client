@@ -1,4 +1,3 @@
-// app/specialties/page.tsx
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import SpecialtiesMainContent from "@/components/specialties/main";

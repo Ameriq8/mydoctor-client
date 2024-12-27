@@ -1,6 +1,13 @@
-import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Search } from "lucide-react";
+import { Input } from '@/components/ui/input';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import { Search } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 interface SearchBarProps {
   searchTerm: string;
@@ -9,9 +16,19 @@ interface SearchBarProps {
   setSortBy: (value: string) => void;
 }
 
-export default function SearchBar({ searchTerm, setSearchTerm, sortBy, setSortBy }: SearchBarProps) {
+export default function SearchBar({
+  searchTerm,
+  setSearchTerm,
+  sortBy,
+  setSortBy,
+}: SearchBarProps) {
   return (
-    <div className="mb-6 flex flex-col gap-4 sm:flex-row">
+    <motion.div
+      className="mb-6 flex flex-col gap-4 sm:flex-row"
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.2 }}
+    >
       <div className="relative flex-grow">
         <Input
           type="search"
@@ -32,6 +49,6 @@ export default function SearchBar({ searchTerm, setSearchTerm, sortBy, setSortBy
           <SelectItem value="patients">Number of Patients</SelectItem>
         </SelectContent>
       </Select>
-    </div>
+    </motion.div>
   );
 }

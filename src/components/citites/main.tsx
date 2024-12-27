@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
@@ -20,7 +20,7 @@ interface CitiesMainContentProps {
 
 const CitiesMainContent: React.FC<CitiesMainContentProps> = ({ cities }) => {
   const [searchTerm, setSearchTerm] = useState<string>('');
-  const { t } = useTranslation("cities");
+  const { t } = useTranslation('cities');
 
   const filteredCities = cities.filter((city) =>
     city.name.toLowerCase().includes(searchTerm.toLowerCase()),
@@ -39,12 +39,28 @@ const CitiesMainContent: React.FC<CitiesMainContentProps> = ({ cities }) => {
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <motion.div
         className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.1,
+            },
+          },
+        }}
       >
         {filteredCities.map((city) => (
-          <CityCard key={city.id} city={city} />
+          <motion.div
+            key={city.id}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 },
+            }}
+          >
+            <CityCard city={city} />
+          </motion.div>
         ))}
       </motion.div>
     </motion.div>

@@ -98,7 +98,10 @@ export default function TreatmentsPage() {
       if (sortBy === "name") return a.name.localeCompare(b.name);
       if (sortBy === "cost") {
         const costOrder = { Low: 1, Medium: 2, High: 3 };
-        return costOrder[b.cost as keyof typeof costOrder] - costOrder[a.cost as keyof typeof costOrder];
+        return (
+          costOrder[b.cost as keyof typeof costOrder] -
+          costOrder[a.cost as keyof typeof costOrder]
+        );
       }
       return 0;
     });
@@ -115,7 +118,7 @@ export default function TreatmentsPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Medical Treatments
+          Medical Services
         </motion.h1>
         <motion.div
           className="mb-6 flex flex-col gap-4 sm:flex-row"
@@ -158,16 +161,27 @@ export default function TreatmentsPage() {
         </motion.div>
         <motion.div
           className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.1,
+              },
+            },
+          }}
         >
-          {filteredAndSortedTreatments.map((treatment, index) => (
+          {filteredAndSortedTreatments.map((treatment) => (
             <motion.div
               key={treatment.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               <Card className="flex h-full flex-col transition-shadow duration-300 hover:shadow-lg">
                 <CardHeader>
@@ -189,7 +203,7 @@ export default function TreatmentsPage() {
                   </p>
                 </CardContent>
                 <CardFooter>
-                  <Link href={`/treatments/${treatment.id}`} className="w-full">
+                  <Link href={`/services/${treatment.id}`} className="w-full">
                     <Button className="w-full">Learn More</Button>
                   </Link>
                 </CardFooter>

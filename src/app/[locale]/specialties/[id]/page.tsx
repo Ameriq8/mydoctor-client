@@ -13,7 +13,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Stethoscope, Search, Star } from "lucide-react";
+import { Search, Star } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Link from "next/link";

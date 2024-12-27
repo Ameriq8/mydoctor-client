@@ -1,4 +1,3 @@
-// components/specialties/SpecialtiesMainContent.tsx
 'use client';
 
 import { motion } from 'framer-motion';
@@ -48,12 +47,30 @@ export default function SpecialtiesMainContent({ specialties }: SpecialtiesMainC
       />
       <motion.div
         className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.1,
+            },
+          },
+        }}
       >
         {filteredAndSortedSpecialties.map((specialty, index) => (
-          <SpecialtyCard key={specialty.id} specialty={specialty} index={index} />
+          <motion.div
+            key={specialty.id}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <SpecialtyCard specialty={specialty} index={index} />
+          </motion.div>
         ))}
       </motion.div>
     </main>
